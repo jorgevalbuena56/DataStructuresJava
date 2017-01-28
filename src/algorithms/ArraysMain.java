@@ -4,11 +4,13 @@
 package algorithms;
 
 import impl.ArrayImpl;
-import sorting.BubbleSortImpl;
-import sorting.InsertionSortImpl;
-import sorting.SelectionSortImpl;
+import sorting.n2.BubbleSortImpl;
+import sorting.n2.InsertionSortImpl;
+import sorting.n2.SelectionSortImpl;
+import sorting.nlogn.MergeSortImpl;
 
 /**
+ * Main Class to test the different algorithms implemented in the other classes
  * 
  * @author GeorgeLocal
  */
@@ -22,11 +24,11 @@ public class ArraysMain {
         //ArrayImpl arr = new ArrayImpl(10);
         //BubbleSortImpl arr = new BubbleSortImpl(10);
         //InsertionSortImpl arr = new InsertionSortImpl(10);
-        SelectionSortImpl arr = new SelectionSortImpl(10);
+        //SelectionSortImpl arr = new SelectionSortImpl(10);
+        MergeSortImpl arr = new MergeSortImpl(11);
         
-        
-        arr.insert(77);
         arr.insert(99);
+        arr.insert(77);      
         arr.insert(44);
         arr.insert(55);
         arr.insert(22);
@@ -35,6 +37,7 @@ public class ArraysMain {
         arr.insert(00);
         arr.insert(66);
         arr.insert(33);
+        arr.insert(4);
         
         
         /*
@@ -55,7 +58,8 @@ public class ArraysMain {
         //arr.insertInOrder(-1);
         //arr.bubbleSort();
         //arr.insertionSort();
-        arr.selectionSort();
+        //arr.selectionSort();
+        arr.mergeSort(0, 10); //Num Elements - 1
         
         arr.display();
         
