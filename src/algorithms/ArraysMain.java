@@ -8,6 +8,7 @@ import sorting.n2.BubbleSortImpl;
 import sorting.n2.InsertionSortImpl;
 import sorting.n2.SelectionSortImpl;
 import sorting.nlogn.MergeSortImpl;
+import sorting.nlogn.QuickSortImpl;
 
 /**
  * Main Class to test the different algorithms implemented in the other classes
@@ -25,7 +26,8 @@ public class ArraysMain {
         //BubbleSortImpl arr = new BubbleSortImpl(10);
         //InsertionSortImpl arr = new InsertionSortImpl(10);
         //SelectionSortImpl arr = new SelectionSortImpl(10);
-        MergeSortImpl arr = new MergeSortImpl(11);
+        //MergeSortImpl arr = new MergeSortImpl(11);
+        QuickSortImpl arr = new QuickSortImpl(11);
         
         arr.insert(99);
         arr.insert(77);      
@@ -59,7 +61,8 @@ public class ArraysMain {
         //arr.bubbleSort();
         //arr.insertionSort();
         //arr.selectionSort();
-        arr.mergeSort(0, 10); //Num Elements - 1
+        //arr.mergeSort(0, 10); //Num Elements - 1
+        arr.quickSort(0, 10); //Num Elements - 1
         
         arr.display();
         
