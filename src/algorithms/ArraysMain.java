@@ -4,6 +4,7 @@
 package algorithms;
 
 import impl.ArrayImpl;
+import selection.n.QuickSelectImpl;
 import sorting.n2.BubbleSortImpl;
 import sorting.n2.InsertionSortImpl;
 import sorting.n2.SelectionSortImpl;
@@ -27,19 +28,28 @@ public class ArraysMain {
         //InsertionSortImpl arr = new InsertionSortImpl(10);
         //SelectionSortImpl arr = new SelectionSortImpl(10);
         //MergeSortImpl arr = new MergeSortImpl(11);
-        QuickSortImpl arr = new QuickSortImpl(11);
+        //QuickSortImpl arr = new QuickSortImpl(11);
+        QuickSelectImpl arr = new QuickSelectImpl(3);
         
-        arr.insert(99);
-        arr.insert(77);      
-        arr.insert(44);
-        arr.insert(55);
-        arr.insert(22);
-        arr.insert(88);
-        arr.insert(11);
-        arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
-        arr.insert(4);
+        arr.insert(2);
+        arr.insert(6);
+        arr.insert(1);
+//        arr.insert(4);
+//        arr.insert(2);
+//        arr.insert(1);
+//        
+        System.out.println("nth value is: " + arr.quickSelect(0, 2, 1));
+//        arr.insert(99);
+//        arr.insert(77);      
+//        arr.insert(44);
+//        arr.insert(55);
+//        arr.insert(22);
+//        arr.insert(88);
+//        arr.insert(11);
+//        arr.insert(00);
+//        arr.insert(66);
+//        arr.insert(33);
+//        arr.insert(4);
         
         
         /*
@@ -62,7 +72,8 @@ public class ArraysMain {
         //arr.insertionSort();
         //arr.selectionSort();
         //arr.mergeSort(0, 10); //Num Elements - 1
-        arr.quickSort(0, 10); //Num Elements - 1
+        //arr.quickSort(0, 10); //Num Elements - 1
+        
         
         arr.display();
         

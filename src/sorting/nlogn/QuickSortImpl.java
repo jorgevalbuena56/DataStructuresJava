@@ -59,7 +59,7 @@ public class QuickSortImpl {
             return; // already sorted
         } else // size is 2 or larger
         {
-            long pivot = arr[right]; // rightmost item is used as a Pivot
+            int pivot = right; // rightmost item is used as a Pivot
             int partition = partitionIt(left, right, pivot);
             quickSort(left, partition - 1); // sort left side
             quickSort(partition + 1, right); // sort right side
@@ -85,28 +85,20 @@ public class QuickSortImpl {
      * @param pivot
      * @return 
      */
-    public int partitionIt(int left, int right, long pivot) {
-        int leftPtr = left - 1; // left (after ++)
-        int rightPtr = right; // right-1 (after --)
-        while (true) { 
-            // find bigger item
-            while (arr[++leftPtr] < pivot)
-                ; // (nop)
-            // find smaller item
-            while (rightPtr > 0 && arr[--rightPtr] > pivot)
-                ; // (nop)
-            if (leftPtr >= rightPtr) // if pointers cross,
-            {
-                break; // partition done
-            } else // not crossed, so
-            {
-                swap(leftPtr, rightPtr); // swap elements
+     private int partitionIt(int left, int right, int pivotIndex) {
+        long pivotValue = arr[pivotIndex];
+        swap(pivotIndex, right); // move pivot to end
+        int storeIndex = left;
+        for (int i = left; i < right; i++) {
+            if (arr[i] < pivotValue) {
+                swap(storeIndex, i);
+                storeIndex++;
             }
-        } // end while(true)
-        swap(leftPtr, right); // restore pivot to middle of the partitions
-        return leftPtr; // return pivot location
-    } // end partitionIt()
-
+        }
+        swap(right, storeIndex); // Move pivot to its final place
+        return storeIndex;
+    }
+     
     public void swap(int dex1, int dex2) // swap two elements
     {
         long temp = arr[dex1]; // A into temp
